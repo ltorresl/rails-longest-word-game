@@ -1,0 +1,14 @@
+<h1> WORD GAME </h1>
+
+  <div class="letters-container">
+    <%@letters.each do |letter| %>
+        <p class="letter-card"><%=letter%></p>
+    <%end%>
+  </div>
+
+  <p>What's the longest word with these letters?</p>
+  <form action="/score" method="post">
+    <input class="search" type="text" name="guess" placeholder="Try it!">
+    <input class="button" type="submit">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  </form>
